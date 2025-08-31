@@ -1,0 +1,22 @@
+/* Basic scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Basic element resets */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

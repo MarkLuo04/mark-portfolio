@@ -1,10 +1,10 @@
 import React from 'react';
-import './About.css';
+import '../styles/About.css';
 
 const About = () => {
   return (
-    <section className="about" id="about">
-      <div className="about-container">
+    <section className="about section" id="about">
+      <div className="section-container">
         <h2 className="section-header">About Me</h2>
         
         <div className="about-content">

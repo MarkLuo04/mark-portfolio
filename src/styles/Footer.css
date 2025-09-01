@@ -1,8 +1,8 @@
 .footer {
-  background: #f8f9fa;
+  background: var(--bg-tertiary);
   padding: 40px 20px;
   text-align: center;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--border-primary);
 }
 
 .footer-content {
@@ -24,14 +24,21 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: white;
-  border: 1px solid #e0e0e0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
   transition: all 0.3s ease;
-  color: #333;
+  color: var(--text-primary);
+  box-shadow: 0 2px 4px var(--shadow-primary);
 }
 
 .social-link:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-secondary);
+}
+
+/* Dark mode specific styling for better border visibility */
+[data-theme="dark"] .social-link {
+  border: 1px solid var(--border-secondary);
+  box-shadow: 0 2px 4px var(--shadow-secondary);
 }
 
 .social-icon {
@@ -39,7 +46,7 @@
 }
 
 .footer-credits {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 

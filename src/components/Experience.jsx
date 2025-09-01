@@ -1,13 +1,13 @@
 import React from 'react';
-import './Experience.css';
+import '../styles/Experience.css';
 
 const Experience = () => {
   return (
-    <section className="experience" id="experience">
-      <div className="experience-container">
+    <section className="experience section" id="experience">
+      <div className="section-container-narrow">
         <h2 className="section-header">Experience</h2>
         
-        <div className="experience-list">
+        <div className="experience-list section-content">
           <div className="experience-card">
             <div className="experience-header">
               <h3>Intern</h3>

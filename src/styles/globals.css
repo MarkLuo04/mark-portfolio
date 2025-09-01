@@ -1,0 +1,173 @@
+/* Global CSS Variables */
+:root {
+  /* Light Theme (Default) */
+  --bg-primary: oklch(0.98 0.005 240);
+  --bg-secondary: oklch(0.95 0.008 240);
+  --bg-tertiary: oklch(0.92 0.008 240);
+  
+  --text-primary: oklch(0.12 0.01 240);
+  --text-secondary: oklch(0.45 0.02 240);
+  --text-tertiary: oklch(0.6 0.02 240);
+  
+  --accent-primary: oklch(0.4 0.15 220);
+  --accent-secondary: oklch(0.5 0.2 220);
+  --accent-hover: oklch(0.35 0.15 220);
+  
+  --border-primary: oklch(0.8 0.015 240);
+  --border-secondary: oklch(0.85 0.012 240);
+  
+  --shadow-primary: rgba(0, 0, 0, 0.05);
+  --shadow-secondary: rgba(0, 0, 0, 0.1);
+  
+  --button-primary-bg: oklch(0.4 0.15 220);
+  --button-primary-text: oklch(0.98 0.005 240);
+  --button-secondary-bg: oklch(0.95 0.008 240);
+  --button-secondary-text: oklch(0.2 0.01 240);
+  --button-secondary-border: oklch(0.8 0.015 240);
+  
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-border: oklch(0.8 0.015 240);
+  --nav-text: oklch(0.45 0.02 240);
+  --nav-hover: oklch(0.92 0.008 240);
+  --nav-active: oklch(0.4 0.15 220);
+  --nav-active-text: oklch(0.98 0.005 240);
+  
+  /* Global Spacing Variables */
+  --section-padding: 80px 20px;
+  --section-padding-compact: 60px 20px;
+  --section-padding-mini: 20px 20px;
+  --section-header-margin: 50px;
+  --section-content-margin: 50px;
+  --section-header-margin-compact: 40px;
+  --section-content-margin-compact: 40px;
+  --section-header-margin-mini: 15px;
+  --section-content-margin-mini: 15px;
+  
+  /* Global Typography */
+  --section-header-size: 2.5rem;
+  --section-header-size-compact: 2rem;
+  --section-header-weight: bold;
+  
+  /* Global Layout */
+  --container-max-width: 1200px;
+  --container-max-width-narrow: 1000px;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --bg-primary: oklch(0.09 0.005 240);
+  --bg-secondary: oklch(0.13 0.008 240);
+  --bg-tertiary: oklch(0.15 0.008 240);
+  
+  --text-primary: oklch(0.98 0.01 240);
+  --text-secondary: oklch(0.9 0.01 240);
+  --text-tertiary: oklch(0.65 0.02 240);
+  
+  --accent-primary: oklch(0.65 0.15 220);
+  --accent-secondary: oklch(0.7 0.18 220);
+  --accent-hover: oklch(0.6 0.15 220);
+  
+  --border-primary: oklch(0.25 0.015 240);
+  --border-secondary: oklch(0.22 0.012 240);
+  
+  --shadow-primary: rgba(0, 0, 0, 0.5);
+  --shadow-secondary: rgba(0, 0, 0, 0.7);
+  
+  --button-primary-bg: oklch(0.65 0.15 220);
+  --button-primary-text: oklch(0.09 0.005 240);
+  --button-secondary-bg: transparent;
+  --button-secondary-text: oklch(0.98 0.01 240);
+  --button-secondary-border: oklch(0.25 0.015 240);
+  
+  --nav-bg: rgba(0, 0, 0, 0.95);
+  --nav-border: oklch(0.25 0.015 240);
+  --nav-text: oklch(0.9 0.01 240);
+  --nav-hover: oklch(0.18 0.01 240);
+  --nav-active: oklch(0.65 0.15 220);
+  --nav-active-text: oklch(0.09 0.005 240);
+  
+  /* Dark mode specific navbar variables for better visibility */
+  --nav-border-dark: oklch(0.3 0.02 240);
+  --nav-shadow-dark: rgba(255, 255, 255, 0.1);
+}
+
+/* Apply theme variables to global elements */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global transitions for smooth theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Global Section Styles */
+.section {
+  padding: var(--section-padding);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-compact {
+  padding: var(--section-padding-compact);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-mini {
+  padding: var(--section-padding-mini);
+  display: flex;
+  align-items: center;
+}
+
+.section-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-container-narrow {
+  max-width: var(--container-max-width-narrow);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-header {
+  font-size: var(--section-header-size);
+  text-align: center;
+  margin-bottom: var(--section-header-margin);
+  font-weight: var(--section-header-weight);
+  color: var(--text-primary);
+}
+
+.section-header-compact {
+  font-size: var(--section-header-size-compact);
+  text-align: center;
+  margin-bottom: var(--section-header-margin-compact);
+  font-weight: var(--section-header-weight);
+  color: var(--text-primary);
+}
+
+.section-header-mini {
+  font-size: var(--section-header-size-compact);
+  text-align: center;
+  margin-bottom: var(--section-header-margin-mini);
+  font-weight: var(--section-header-weight);
+  color: var(--text-primary);
+}
+
+.section-content {
+  margin-top: var(--section-content-margin);
+}
+
+.section-content-compact {
+  margin-top: var(--section-content-margin-compact);
+}
+
+.section-content-mini {
+  margin-top: var(--section-content-margin-mini);
+}

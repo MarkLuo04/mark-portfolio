@@ -1,13 +1,13 @@
 import React from 'react';
-import './Projects.css';
+import '../styles/Projects.css';
 
 const Projects = () => {
   return (
-    <section className="projects" id="projects">
-      <div className="projects-container">
+    <section className="projects section" id="projects">
+      <div className="section-container">
         <h2 className="section-header">Projects</h2>
         
-        <div className="projects-grid">
+        <div className="projects-grid section-content">
           <div className="project-card">
             <div className="project-image">
               <div className="placeholder-image">📱</div>

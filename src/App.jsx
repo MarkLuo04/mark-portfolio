@@ -1,5 +1,7 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
+import './styles/globals.css';
+import { ThemeProvider } from './context/ThemeContext';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,18 +13,20 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-        <Skills />
-        <Awards />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Navigation />
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Experience />
+          <Skills />
+          <Awards />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import './Awards.css';
+import '../styles/Awards.css';
 
 const Awards = () => {
   return (
-    <section className="awards" id="awards">
-      <div className="awards-container">
+    <section className="awards section" id="awards">
+      <div className="section-container">
         <h2 className="section-header">Awards & Certifications</h2>
         
-        <div className="awards-grid">
+        <div className="awards-grid section-content">
           <div className="award-card">
             <div className="award-icon">🏆</div>
             <h3>Award 1</h3>

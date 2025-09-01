@@ -1,0 +1,69 @@
+.navigation {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  gap: 15px;
+  background: var(--nav-bg);
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid var(--nav-border);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px var(--shadow-secondary), 0 2px 8px var(--shadow-primary);
+}
+
+/* Dark mode specific styling for better navbar visibility */
+[data-theme="dark"] .nav-container {
+  border: 2px solid var(--nav-border-dark);
+  box-shadow: 0 4px 20px var(--nav-shadow-dark), 0 2px 8px var(--nav-shadow-dark), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: var(--nav-text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background: var(--nav-hover);
+  transform: scale(1.1);
+}
+
+.nav-link.active {
+  background: var(--nav-active);
+  color: var(--nav-active-text);
+}
+
+.nav-icon {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--nav-hover);
+  transform: scale(1.1);
+}
+
+.theme-toggle .nav-icon {
+  font-size: 16px;
+}

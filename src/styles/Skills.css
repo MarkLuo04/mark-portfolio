@@ -1,0 +1,52 @@
+.skills {
+  background-color: var(--bg-primary);
+  padding: 30px 20px;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.section-header {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.skills-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-bubble {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
+  cursor: default;
+  box-shadow: 0 2px 4px var(--shadow-primary);
+}
+
+/* Dark mode specific styling for better border visibility */
+[data-theme="dark"] .skill-bubble {
+  border: 1px solid var(--border-secondary);
+  box-shadow: 0 2px 4px var(--shadow-secondary);
+}
+
+.skill-bubble:hover {
+  background: var(--accent-primary);
+  color: var(--button-primary-text);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px var(--shadow-secondary);
+}

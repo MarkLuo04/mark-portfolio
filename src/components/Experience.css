@@ -1,1 +1,78 @@
-/* Experience styles will go here */
+.experience {
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.experience-card {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-left: 3px solid #333;
+}
+
+.experience-header {
+  margin-bottom: 20px;
+}
+
+.experience-header h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.company {
+  display: block;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.duration {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.experience-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.experience-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-content li {
+  padding: 5px 0;
+  color: #666;
+  position: relative;
+  padding-left: 20px;
+}
+
+.experience-content li:before {
+  content: "▸";
+  color: #333;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}

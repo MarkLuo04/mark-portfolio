@@ -9,7 +9,7 @@ const Hero = () => {
           <div className="profile-bubble">👤</div>
         </div>
         <h1 className="hero-name">Mark Luo</h1>
-        <p className="hero-tagline">description</p>
+        <p className="hero-tagline">Queen's Computing Student specializing in Software Design</p>
         <div className="hero-buttons">
           <button className="btn btn-primary">View Projects</button>
           <button className="btn btn-secondary">Download CV</button>

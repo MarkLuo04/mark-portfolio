@@ -104,6 +104,7 @@ const Projects = () => {
                 <span>Logic</span>
                 <span>Python</span>
                 <span>Jape</span>
+                <span>Terminal</span>
               </div>
               <div className="project-actions">
                 <a href="https://github.com/MarkLuo04/battleship-cheats" target="_blank" rel="noopener noreferrer">

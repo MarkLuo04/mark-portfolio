@@ -121,8 +121,7 @@ const Experience = () => {
   return (
     <section className="experience section" id="experience">
       <div className="section-container">
-        <h2 className="section-header">What I've Done</h2>
-        <p className="section-subtitle">Highlights from my work, competitions, and learning experiences</p>
+        <h2 className="section-header">My Experiences</h2>
         
         <div className="experience-timeline">
           {/* Timeline Line */}
@@ -226,7 +225,7 @@ const Experience = () => {
               {/* Minimalistic View */}
               <div className="experience-minimal">
                 <div className="experience-basic">
-                  <h3 className="job-title">Case Competition and Hackathon - 1st Place</h3>
+                  <h3 className="job-title">Case Competition and Hackathon</h3>
                   <span className="company-name">Queen's Sports Analytics Organization</span>
                   <p className="experience-summary">
                     Won 1st place in case competition by acting as analytics consultants for the Memphis Grizzlies through data-driven strategies.
@@ -318,7 +317,7 @@ const Experience = () => {
               {/* Minimalistic View */}
               <div className="experience-minimal">
                 <div className="experience-basic">
-                  <h3 className="job-title">Synapsis BioHackathon 2025 - High Impact Award</h3>
+                  <h3 className="job-title">Synapsis BioHackathon 2025</h3>
                   <span className="company-name">Queen's Synapsis BioTech</span>
                   <p className="experience-summary">
                     Won high impact award in the Synapsis BioHackathon 2025 for our project in optimizing clinical trial recruitment.

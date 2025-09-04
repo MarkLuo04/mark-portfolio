@@ -38,6 +38,29 @@
   margin-bottom: 15px;
   font-weight: bold;
   color: var(--text-primary);
+  min-height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-text {
+  display: inline-block;
+}
+
+.typing-cursor {
+  display: inline-block;
+  font-weight: 100;
+  color: var(--accent-primary);
+  margin-left: 2px;
+}
+
+.typing-cursor.visible {
+  opacity: 1;
+}
+
+.typing-cursor.hidden {
+  opacity: 0;
 }
 
 .hero-tagline {

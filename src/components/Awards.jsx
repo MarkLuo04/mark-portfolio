@@ -23,7 +23,6 @@ const Awards = () => {
     <section className="awards section" id="awards">
       <div className="section-container">
         <h2 className="section-header">Awards & Certifications</h2>
-        <p className="section-subtitle">Recognition and professional development milestones</p>
         
         <div className="awards-grid">
           {/* Hackathon Winner */}

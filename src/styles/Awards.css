@@ -1,76 +1,237 @@
 .awards {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-primary);
+  padding: 80px 0;
 }
 
-.awards-container {
+.section-container {
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  padding: 0 20px;
 }
 
 .section-header {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 50px;
-  font-weight: bold;
+  margin-bottom: 16px;
+  font-weight: 700;
   color: var(--text-primary);
+}
+
+.section-subtitle {
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 400;
 }
 
 .awards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .award-card {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   border-radius: 12px;
-  padding: 25px;
-  text-align: center;
-  border: 1px solid var(--border-primary);
+  padding: 18px;
+  border: 1px solid var(--border-secondary);
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px var(--shadow-primary);
-}
-
-/* Dark mode specific styling for better border visibility */
-[data-theme="dark"] .award-card {
-  border: 1px solid var(--border-secondary);
-  box-shadow: 0 2px 8px var(--shadow-secondary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
 }
 
 .award-card:hover {
-  box-shadow: 0 4px 16px var(--shadow-secondary);
+  box-shadow: 0 8px 24px var(--shadow-secondary);
+  transform: translateY(-2px);
 }
 
 .award-icon {
-  font-size: 48px;
-  margin-bottom: 15px;
-  color: var(--text-secondary);
+  margin-bottom: 12px;
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
 }
 
-.award-card h3 {
-  font-size: 1.2rem;
+.award-icon.certification {
+  color: #3b82f6;
+}
+
+.award-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.award-content {
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.award-title {
+  font-size: 1.1rem;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-weight: 600;
+  line-height: 1.3;
 }
 
 .award-issuer {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   font-weight: 500;
-  margin-bottom: 5px;
-  font-size: 0.9rem;
+  margin-bottom: 3px;
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .award-date {
   color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-bottom: 15px;
-  font-style: italic;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.award-details {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.expand-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-button:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.award-expanded {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-secondary);
 }
 
 .award-description {
   color: var(--text-secondary);
+  font-size: 0.8rem;
   line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Certification Details Styling */
+.certification-details {
+  margin-top: 12px;
+}
+
+.courses-header {
+  color: var(--text-primary);
   font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+.courses-list li {
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.courses-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #3b82f6;
+  border-radius: 50%;
+}
+
+.github-projects {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+}
+
+.github-projects svg {
+  color: var(--text-secondary);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .awards {
+    padding: 50px 0;
+  }
+  
+  .section-header {
+    font-size: 2rem;
+  }
+  
+  .awards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  
+  .award-card {
+    padding: 16px;
+    min-height: 110px;
+  }
+  
+  .award-tag {
+    top: 14px;
+    right: 14px;
+    padding: 3px 8px;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    font-size: 1.75rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .award-card {
+    padding: 14px;
+    min-height: 100px;
+  }
+  
+  .award-title {
+    font-size: 1rem;
+  }
 }

@@ -1,28 +1,68 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import TypingAnimation from './TypingAnimation';
+import { useTheme } from '../context/ThemeContext';
+import cyberpunkImage from '../images/cyberpunk.jpg';
+import cyberpunkLightImage from '../images/cyberpunk-light.png';
 import '../styles/Hero.css';
 
 const Hero = () => {
+  const { isDarkMode } = useTheme();
+  const backgroundImage = isDarkMode ? cyberpunkImage : cyberpunkLightImage;
+
   return (
-    <section className="hero section" id="home">
+    <section 
+      className="hero section" 
+      id="home"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="hero-content">
-        <div className="profile-picture">
-          <div className="profile-bubble">👤</div>
-        </div>
-        <h1 className="hero-name">
+        <motion.h1 
+          className="hero-name"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 1.5,
+            ease: "easeOut"
+          }}
+        >
+          Mark Luo
+        </motion.h1>
+        <div className="hero-tagline">
           <TypingAnimation 
-            text="Mark Luo"
+            text="Full-Stack Developer"
             typingSpeed={150}
             deletingSpeed={100}
             pauseTime={2000}
             className="typing-text"
+            cursorChar="|"
+            loop={false}
+            delay={1500}
           />
-        </h1>
-        <p className="hero-tagline">Queen's Computing Student specializing in Software Design</p>
-        <div className="hero-buttons">
-          <button className="btn btn-primary">View Projects</button>
-          <button className="btn btn-secondary">Download CV</button>
         </div>
+        <motion.div 
+          className="scroll-indicator"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ 
+            duration: 0.8,
+            delay: 5.5,
+            ease: "easeOut"
+          }}
+        >
+          <p className="scroll-text">Scroll to explore</p>
+          <div className="scroll-chevron">⌄</div>
+        </motion.div>
+      </div>
+      
+      {/* Image attribution */}
+      <div className="image-attribution">
+        <p className="attribution-text">Background from Cyberpunk 2077 (Day & Night)</p>
       </div>
     </section>
   );

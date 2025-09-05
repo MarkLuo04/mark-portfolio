@@ -6,7 +6,7 @@ const ScrollAnimation = ({
   children, 
   animation = 'fadeInUp', 
   delay = 0, 
-  duration = 0.6,
+  duration = 0.4,
   threshold = 0.1,
   className = '',
   ...props 
@@ -15,21 +15,21 @@ const ScrollAnimation = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { 
     once: true, 
-    threshold: threshold,
-    margin: "-50px 0px -50px 0px"
+    threshold: 0.2,
+    margin: "-100px 0px -100px 0px"
   });
 
   const animations = {
     fadeInUp: {
-      initial: { opacity: 0, y: 30 },
+      initial: { opacity: 0, y: 50 },
       animate: { opacity: 1, y: 0 }
     },
     fadeInLeft: {
-      initial: { opacity: 0, x: -30 },
+      initial: { opacity: 0, x: -50 },
       animate: { opacity: 1, x: 0 }
     },
     fadeInRight: {
-      initial: { opacity: 0, x: 30 },
+      initial: { opacity: 0, x: 50 },
       animate: { opacity: 1, x: 0 }
     },
     fadeIn: {
@@ -37,15 +37,15 @@ const ScrollAnimation = ({
       animate: { opacity: 1 }
     },
     scaleIn: {
-      initial: { opacity: 0, scale: 0.8 },
+      initial: { opacity: 0, scale: 0.7 },
       animate: { opacity: 1, scale: 1 }
     },
     bounceIn: {
-      initial: { opacity: 0, scale: 0.3 },
+      initial: { opacity: 0, scale: 0.2 },
       animate: { opacity: 1, scale: 1 }
     },
     slideInUp: {
-      initial: { opacity: 0, y: 50 },
+      initial: { opacity: 0, y: 80 },
       animate: { opacity: 1, y: 0 }
     }
   };
@@ -61,7 +61,7 @@ const ScrollAnimation = ({
       transition={{
         duration: duration,
         delay: delay,
-        ease: "easeOut"
+        ease: [0.25, 0.1, 0.25, 1]
       }}
       className={className}
       {...props}

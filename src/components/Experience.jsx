@@ -122,18 +122,18 @@ const Experience = () => {
   return (
     <section className="experience section" id="experience">
       <div className="section-container">
-        <ScrollAnimation animation="fadeInUp" delay={0.2}>
+        <ScrollAnimation animation="fadeInUp" delay={0.1}>
           <h2 className="section-header">My Experiences</h2>
         </ScrollAnimation>
         
         <div className="experience-timeline">
           {/* Timeline Line */}
-          <ScrollAnimation animation="slideInUp" delay={0.3} duration={1.0}>
+          <ScrollAnimation animation="slideInUp" delay={0.2} duration={0.6}>
             <div className="timeline-line"></div>
           </ScrollAnimation>
           
           {/* First Experience - Data Analyst */}
-          <ScrollAnimation animation="fadeInLeft" delay={0.4}>
+          <ScrollAnimation animation="fadeInLeft" delay={0.3}>
             <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">
@@ -226,7 +226,7 @@ const Experience = () => {
           </ScrollAnimation>
 
           {/* Second Experience - Case Competition */}
-          <ScrollAnimation animation="fadeInRight" delay={0.6}>
+          <ScrollAnimation animation="fadeInRight" delay={0.4}>
             <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">
@@ -320,7 +320,7 @@ const Experience = () => {
           </ScrollAnimation>
 
           {/* Third Experience - Synapsis BioHackathon */}
-          <ScrollAnimation animation="fadeInLeft" delay={0.8}>
+          <ScrollAnimation animation="fadeInLeft" delay={0.5}>
             <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">
@@ -413,7 +413,7 @@ const Experience = () => {
           </ScrollAnimation>
 
           {/* Fourth Experience - Piano Teacher */}
-          <ScrollAnimation animation="fadeInRight" delay={1.0}>
+          <ScrollAnimation animation="fadeInRight" delay={0.6}>
             <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">

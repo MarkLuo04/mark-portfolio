@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Star, ChevronDown, ChevronUp, GraduationCap, Github } from 'lucide-react';
 import ScrollAnimation from './ScrollAnimation';
 import '../styles/Awards.css';
@@ -13,6 +13,37 @@ const Awards = () => {
     webDevCerts: false
   });
 
+  const [titleWrapping, setTitleWrapping] = useState({});
+
+  // Function to detect if a title wraps
+  const checkTitleWrapping = (titleRef, cardId) => {
+    if (titleRef.current) {
+      const titleElement = titleRef.current;
+      const isWrapping = titleElement.scrollHeight > titleElement.clientHeight;
+      setTitleWrapping(prev => ({
+        ...prev,
+        [cardId]: isWrapping
+      }));
+    }
+  };
+
+  // Create refs for each title
+  const titleRefs = {
+    qsaoCaseComp: useRef(null),
+    bioHackathon: useRef(null),
+    deansList: useRef(null),
+    rcmLevel10: useRef(null),
+    rcmTeaching: useRef(null),
+    webDevCerts: useRef(null)
+  };
+
+  // Check wrapping on mount and when expanded state changes
+  useEffect(() => {
+    Object.keys(titleRefs).forEach(cardId => {
+      checkTitleWrapping(titleRefs[cardId], cardId);
+    });
+  }, [expandedCards]);
+
   const toggleExpanded = (cardKey) => {
     setExpandedCards(prev => ({
       ...prev,
@@ -23,21 +54,25 @@ const Awards = () => {
   return (
     <section className="awards section" id="awards">
       <div className="section-container">
-        <ScrollAnimation animation="fadeInUp" delay={0.2}>
+        <ScrollAnimation animation="fadeInUp" delay={0.1}>
           <h2 className="section-header">Awards & Certifications</h2>
         </ScrollAnimation>
         
         <div className="awards-grid">
           {/* Hackathon Winner */}
-          <ScrollAnimation animation="scaleIn" delay={0.3}>
+          <ScrollAnimation animation="scaleIn" delay={0.2}>
             <div className={`award-card ${expandedCards.qsaoCaseComp ? 'expanded' : ''}`}>
             <div className="award-icon">
               <Star size={24} />
             </div>
-            <div className="award-content">
-              <h3 className="award-title">1st Place at QSAO Case Competition</h3>
-              <p className="award-issuer">Queen's Sports Analytics Organization</p>
-              <p className="award-date">Mar 2024</p>
+            <div className={`award-content ${titleWrapping.qsaoCaseComp ? 'multi-line' : 'single-line'}`}>
+              <div className="award-content-top">
+                <h3 ref={titleRefs.qsaoCaseComp} className="award-title">1st Place at QSAO Case Competition</h3>
+                <p className="award-issuer">Queen's Sports Analytics Organization</p>
+              </div>
+              <div className="award-content-bottom">
+                <p className="award-date">Mar 2024</p>
+              </div>
               {expandedCards.qsaoCaseComp && (
                 <div className="award-expanded">
                   <p className="award-description">
@@ -56,15 +91,19 @@ const Awards = () => {
           </ScrollAnimation>
 
           {/* BioHackathon Award*/}
-          <ScrollAnimation animation="scaleIn" delay={0.4}>
+          <ScrollAnimation animation="scaleIn" delay={0.25}>
             <div className={`award-card ${expandedCards.bioHackathon ? 'expanded' : ''}`}>
             <div className="award-icon">
               <Star size={24} />
             </div>
-            <div className="award-content">
-              <h3 className="award-title">High Impact Potential Award</h3>
-              <p className="award-issuer">Queen's Synapsis BioHackathon</p>
-              <p className="award-date">Nov 2023</p>
+            <div className={`award-content ${titleWrapping.bioHackathon ? 'multi-line' : 'single-line'}`}>
+              <div className="award-content-top">
+                <h3 ref={titleRefs.bioHackathon} className="award-title">High Impact Potential Award</h3>
+                <p className="award-issuer">Queen's Synapsis BioHackathon</p>
+              </div>
+              <div className="award-content-bottom">
+                <p className="award-date">Nov 2023</p>
+              </div>
               {expandedCards.bioHackathon && (
                 <div className="award-expanded">
                   <p className="award-description">
@@ -83,15 +122,19 @@ const Awards = () => {
           </ScrollAnimation>
 
           {/* Dean's List */}
-          <ScrollAnimation animation="scaleIn" delay={0.5}>
+          <ScrollAnimation animation="scaleIn" delay={0.3}>
             <div className={`award-card ${expandedCards.deansList ? 'expanded' : ''}`}>
             <div className="award-icon">
               <Star size={24} />
             </div>
-            <div className="award-content">
-              <h3 className="award-title">Dean's Honours List</h3>
-              <p className="award-issuer">Queen's University</p>
-              <p className="award-date">Fall 2024</p>
+            <div className={`award-content ${titleWrapping.deansList ? 'multi-line' : 'single-line'}`}>
+              <div className="award-content-top">
+                <h3 ref={titleRefs.deansList} className="award-title">Dean's Honours List</h3>
+                <p className="award-issuer">Queen's University</p>
+              </div>
+              <div className="award-content-bottom">
+                <p className="award-date">Fall 2024</p>
+              </div>
               {expandedCards.deansList && (
                 <div className="award-expanded">
                   <p className="award-description">
@@ -110,15 +153,19 @@ const Awards = () => {
           </ScrollAnimation>
 
           {/* RCM Level 10 Certificate */}
-          <ScrollAnimation animation="scaleIn" delay={0.6}>
+          <ScrollAnimation animation="scaleIn" delay={0.35}>
             <div className={`award-card ${expandedCards.rcmLevel10 ? 'expanded' : ''}`}>
             <div className="award-icon certification">
               <GraduationCap size={24} />
             </div>
-            <div className="award-content">
-              <h3 className="award-title">RCM Level 10 Certificate</h3>
-              <p className="award-issuer">Royal Conservatory of Music</p>
-              <p className="award-date">2018</p>
+            <div className={`award-content ${titleWrapping.rcmLevel10 ? 'multi-line' : 'single-line'}`}>
+              <div className="award-content-top">
+                <h3 ref={titleRefs.rcmLevel10} className="award-title">RCM Level 10 Certificate</h3>
+                <p className="award-issuer">Royal Conservatory of Music</p>
+              </div>
+              <div className="award-content-bottom">
+                <p className="award-date">2018</p>
+              </div>
               {expandedCards.rcmLevel10 && (
                 <div className="award-expanded">
                   <p className="award-description">
@@ -137,15 +184,19 @@ const Awards = () => {
           </ScrollAnimation>
 
           {/* RCM Teaching Elementary Piano Course */}
-          <ScrollAnimation animation="scaleIn" delay={0.7}>
+          <ScrollAnimation animation="scaleIn" delay={0.4}>
             <div className={`award-card ${expandedCards.rcmTeaching ? 'expanded' : ''}`}>
             <div className="award-icon certification">
               <GraduationCap size={24} />
             </div>
-            <div className="award-content">
-              <h3 className="award-title">RCM Teaching Elementary Piano Course</h3>
-              <p className="award-issuer">Royal Conservatory of Music</p>
-              <p className="award-date">April 2025</p>
+            <div className={`award-content ${titleWrapping.rcmTeaching ? 'multi-line' : 'single-line'}`}>
+              <div className="award-content-top">
+                <h3 ref={titleRefs.rcmTeaching} className="award-title">RCM Teaching Elementary Piano Course</h3>
+                <p className="award-issuer">Royal Conservatory of Music</p>
+              </div>
+              <div className="award-content-bottom">
+                <p className="award-date">April 2025</p>
+              </div>
               {expandedCards.rcmTeaching && (
                 <div className="award-expanded">
                   <p className="award-description">
@@ -164,15 +215,19 @@ const Awards = () => {
           </ScrollAnimation>
 
           {/* Web Development Certifications */}
-          <ScrollAnimation animation="scaleIn" delay={0.8}>
+          <ScrollAnimation animation="scaleIn" delay={0.45}>
             <div className={`award-card ${expandedCards.webDevCerts ? 'expanded' : ''}`}>
             <div className="award-icon certification">
               <GraduationCap size={24} />
             </div>
-            <div className="award-content">
-              <h3 className="award-title">Web Development Certifications</h3>
-              <p className="award-issuer">TOP, fCC, Scrimba</p>
-              <p className="award-date">Jan 2024</p>
+            <div className={`award-content ${titleWrapping.webDevCerts ? 'multi-line' : 'single-line'}`}>
+              <div className="award-content-top">
+                <h3 ref={titleRefs.webDevCerts} className="award-title">Web Development Certifications</h3>
+                <p className="award-issuer">TOP, fCC, Scrimba</p>
+              </div>
+              <div className="award-content-bottom">
+                <p className="award-date">Jan 2024</p>
+              </div>
               {expandedCards.webDevCerts && (
                 <div className="award-expanded">
                   <div className="certification-details">

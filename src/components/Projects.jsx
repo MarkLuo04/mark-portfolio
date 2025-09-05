@@ -10,11 +10,11 @@ const Projects = () => {
   return (
     <section className="section" id="projects">
       <div className="section-container">
-        <ScrollAnimation animation="fadeInUp" delay={0.2}>
+        <ScrollAnimation animation="fadeInUp" delay={0.1}>
           <h2 className="section-header">Projects</h2>
         </ScrollAnimation>
         <div className="projects-grid">
-          <ScrollAnimation animation="fadeInUp" delay={0.4}>
+          <ScrollAnimation animation="fadeInUp" delay={0.2}>
             <div className="project-card">
               <div className="project-image">
                 <img src={typevibeImage} alt="Mood Playlist Generator" />
@@ -55,7 +55,7 @@ const Projects = () => {
           </div>
           </ScrollAnimation>
 
-          <ScrollAnimation animation="fadeInUp" delay={0.6}>
+          <ScrollAnimation animation="fadeInUp" delay={0.3}>
             <div className="project-card">
               <div className="project-image">
                 <img src={calculatorImage} alt="Calculator App" />
@@ -95,7 +95,7 @@ const Projects = () => {
           </div>
           </ScrollAnimation>
 
-          <ScrollAnimation animation="fadeInUp" delay={0.8}>
+          <ScrollAnimation animation="fadeInUp" delay={0.4}>
             <div className="project-card">
               <div className="project-image">
                 <img src={modellingImage} alt="Battleship Cheats" />
@@ -136,7 +136,7 @@ const Projects = () => {
           </div>
           </ScrollAnimation>
         </div>
-        <ScrollAnimation animation="fadeInUp" delay={1.0}>
+        <ScrollAnimation animation="fadeInUp" delay={0.5}>
           <div className="projects-cta">
           <a href="https://github.com/MarkLuo04" target="_blank" rel="noopener noreferrer">
             <button className="btn btn-secondary btn-large">

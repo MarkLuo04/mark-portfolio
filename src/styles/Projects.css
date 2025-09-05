@@ -170,11 +170,25 @@
   .project-header {
     flex-direction: column;
     gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .project-title {
+    text-align: center;
   }
   
   .project-category {
     margin-left: 0;
-    align-self: flex-start;
+    align-self: center;
+  }
+  
+  .project-description {
+    text-align: left;
+  }
+  
+  .project-tech {
+    justify-content: center;
   }
   
   .project-actions {

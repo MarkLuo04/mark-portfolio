@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Briefcase, Trophy, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MapPin, Briefcase, Trophy, ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
 import ScrollAnimation from './ScrollAnimation';
 import '../styles/Experience.css';
 import recapArticleImage from '../images/recap-article.png';
@@ -38,11 +38,6 @@ const Experience = () => {
       alt: "NBA Awards Prediction Article",
       description: "Article written: Mid-season NBA Awards prediction"
     },
-    {
-      src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-      alt: "Basketball Data",
-      description: "Data analysis and visualization sessions - working with complex datasets to extract meaningful insights for strategic decision-making."
-    }
   ];
 
   const experience2Images = [
@@ -145,13 +140,13 @@ const Experience = () => {
                   <p className="experience-summary">
                     Sports data analyst conducting research and analysis on basketball statistics to write articles on NBA topics.
                   </p>
-                                      <button 
-                        className="expand-button"
-                        onClick={() => toggleExpanded('experience1')}
-                    >
-                        {expandedSections.experience1 ? 'Show Less' : 'Click to see more details'}
-                    </button>
                 </div>
+                <button 
+                  className="expand-button"
+                  onClick={() => toggleExpanded('experience1')}
+                >
+                  {expandedSections.experience1 ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </button>
               </div>
               
               {/* Expanded Content */}
@@ -238,13 +233,13 @@ const Experience = () => {
                   <p className="experience-summary">
                     Won 1st place in case competition by acting as analytics consultants for the Memphis Grizzlies through data-driven strategies.
                   </p>
-                                      <button 
-                        className="expand-button"
-                        onClick={() => toggleExpanded('experience2')}
-                    >
-                        {expandedSections.experience2 ? 'Show Less' : 'Click to see more details'}
-                    </button>
                 </div>
+                <button 
+                  className="expand-button"
+                  onClick={() => toggleExpanded('experience2')}
+                >
+                  {expandedSections.experience2 ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </button>
               </div>
               
               {/* Expanded Content */}
@@ -332,13 +327,13 @@ const Experience = () => {
                   <p className="experience-summary">
                     Won high impact award in the Synapsis BioHackathon 2025 for our project in optimizing clinical trial recruitment.
                   </p>
-                                      <button 
-                        className="expand-button"
-                        onClick={() => toggleExpanded('experience3')}
-                    >
-                        {expandedSections.experience3 ? 'Show Less' : 'Click to see more details'}
-                    </button>
                 </div>
+                <button 
+                  className="expand-button"
+                  onClick={() => toggleExpanded('experience3')}
+                >
+                  {expandedSections.experience3 ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </button>
               </div>
               
               {/* Expanded Content */}
@@ -425,13 +420,13 @@ const Experience = () => {
                   <p className="experience-summary">
                     Instructing students in practical piano lessons and music theory, helping them develop both technical skills and musicality on the piano.
                   </p>
-                                      <button 
-                        className="expand-button"
-                        onClick={() => toggleExpanded('experience4')}
-                    >
-                        {expandedSections.experience4 ? 'Show Less' : 'Click to see more details'}
-                    </button>
                 </div>
+                <button 
+                  className="expand-button"
+                  onClick={() => toggleExpanded('experience4')}
+                >
+                  {expandedSections.experience4 ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </button>
               </div>
               
               {/* Expanded Content */}

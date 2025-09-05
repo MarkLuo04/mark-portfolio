@@ -77,6 +77,7 @@
 /* Minimalistic View */
 .experience-minimal {
   padding: 32px;
+  position: relative;
 }
 
 .experience-basic {
@@ -134,22 +135,28 @@
 }
 
 .expand-button {
-  background: none;
-  border: none;
-  color: rgba(156, 163, 175, 0.7);
-  font-size: 0.9rem;
-  font-weight: 400;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
+  color: var(--text-secondary);
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 0;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   transition: all 0.3s ease;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-shadow: 0 2px 8px var(--shadow-primary);
 }
 
 .expand-button:hover {
-  color: var(--text-primary);
-  transform: translateX(4px);
+  background: var(--accent-primary);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--shadow-secondary);
 }
 
 /* Expanded Content */
@@ -555,6 +562,7 @@
   
   .experience-minimal {
     padding: 24px;
+    position: relative;
   }
   
   .job-title {
@@ -567,10 +575,14 @@
   
   .experience-summary {
     font-size: 0.95rem;
+    margin-bottom: 20px;
   }
   
   .expand-button {
-    font-size: 0.85rem;
+    width: 36px;
+    height: 36px;
+    top: 16px;
+    right: 16px;
   }
   
   .experience-timeline {
@@ -595,5 +607,21 @@
   .experience-image-section,
   .experience-image-section-wide {
     width: 100%;
+  }
+  
+  /* Fix date and location spacing on mobile */
+  .experience-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .date-range {
+    font-size: 0.9rem;
+  }
+  
+  .location {
+    font-size: 0.9rem;
   }
 }

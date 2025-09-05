@@ -18,7 +18,6 @@ const Skills = () => {
           <span className="skill-bubble">Git</span>
           <span className="skill-bubble">React</span>
           <span className="skill-bubble">Node.js</span>
-          <span className="skill-bubble">Typescript</span>
         </div>
       </div>
     </section>

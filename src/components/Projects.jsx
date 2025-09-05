@@ -131,7 +131,7 @@ const Projects = () => {
           <a href="https://github.com/MarkLuo04" target="_blank" rel="noopener noreferrer">
             <button className="btn btn-secondary btn-large">
               <Github size={18} />
-              <span>View All Projects on GitHub</span>
+              <span>View more projects on my GitHub</span>
             </button>
           </a>
         </div>

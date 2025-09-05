@@ -207,7 +207,7 @@ const Experience = () => {
                         </div>
                       </div>
                                             <p className="job-description">
-                        As a sports data analyst for the QSAO Basketball team, I conducted research and analysis on NBA topics. I collected and interpreted data from reputable sources such as NBA.com, ESPN Analytics, and Basketball Reference to generate insights and write articles on various NBA news and trends. 
+                        As a sports data analyst for the QSAO Basketball team, I conducted research and analysis on NBA topics. I collected and interpreted data from reputable sources such as NBA.com, ESPN Analytics, and Basketball Reference to generate insights and write articles on various NBA news and trends. I also participated in meetings and discussions with other members of the basketball analyst team to brainstorm and communicate ideas.
                       </p>
                       
 

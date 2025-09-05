@@ -171,3 +171,48 @@ body {
 .section-content-mini {
   margin-top: var(--section-content-margin-mini);
 }
+
+/* Global Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border: 1px solid var(--button-secondary-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateY(-1px);
+}
+
+.btn-large {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 12px;
+}
+

@@ -1,5 +1,7 @@
 .experience {
   background-color: var(--bg-primary);
+  padding-top: 150px;
+  position: relative;
 }
 
 .section-header {

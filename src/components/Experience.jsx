@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Briefcase, Trophy, ChevronLeft, ChevronRight } from 'lucide-react';
+import ScrollAnimation from './ScrollAnimation';
 import '../styles/Experience.css';
 import recapArticleImage from '../images/recap-article.png';
 import awardArticleImage from '../images/award-prediction-article.png';
@@ -121,14 +122,19 @@ const Experience = () => {
   return (
     <section className="experience section" id="experience">
       <div className="section-container">
-        <h2 className="section-header">My Experiences</h2>
+        <ScrollAnimation animation="fadeInUp" delay={0.2}>
+          <h2 className="section-header">My Experiences</h2>
+        </ScrollAnimation>
         
         <div className="experience-timeline">
           {/* Timeline Line */}
-          <div className="timeline-line"></div>
+          <ScrollAnimation animation="slideInUp" delay={0.3} duration={1.0}>
+            <div className="timeline-line"></div>
+          </ScrollAnimation>
           
           {/* First Experience - Data Analyst */}
-          <div className="timeline-item">
+          <ScrollAnimation animation="fadeInLeft" delay={0.4}>
+            <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">
               {/* Minimalistic View */}
@@ -217,9 +223,11 @@ const Experience = () => {
               )}
             </div>
           </div>
+          </ScrollAnimation>
 
           {/* Second Experience - Case Competition */}
-          <div className="timeline-item">
+          <ScrollAnimation animation="fadeInRight" delay={0.6}>
+            <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">
               {/* Minimalistic View */}
@@ -309,9 +317,11 @@ const Experience = () => {
               )}
             </div>
           </div>
+          </ScrollAnimation>
 
           {/* Third Experience - Synapsis BioHackathon */}
-          <div className="timeline-item">
+          <ScrollAnimation animation="fadeInLeft" delay={0.8}>
+            <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">
               {/* Minimalistic View */}
@@ -400,9 +410,11 @@ const Experience = () => {
               )}
             </div>
           </div>
+          </ScrollAnimation>
 
           {/* Fourth Experience - Piano Teacher */}
-          <div className="timeline-item">
+          <ScrollAnimation animation="fadeInRight" delay={1.0}>
+            <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="experience-card">
               {/* Minimalistic View */}
@@ -491,6 +503,7 @@ const Experience = () => {
               )}
             </div>
           </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ChevronDown, ChevronUp, GraduationCap, Github } from 'lucide-react';
+import ScrollAnimation from './ScrollAnimation';
 import '../styles/Awards.css';
 
 const Awards = () => {
@@ -22,11 +23,14 @@ const Awards = () => {
   return (
     <section className="awards section" id="awards">
       <div className="section-container">
-        <h2 className="section-header">Awards & Certifications</h2>
+        <ScrollAnimation animation="fadeInUp" delay={0.2}>
+          <h2 className="section-header">Awards & Certifications</h2>
+        </ScrollAnimation>
         
         <div className="awards-grid">
           {/* Hackathon Winner */}
-          <div className="award-card">
+          <ScrollAnimation animation="scaleIn" delay={0.3}>
+            <div className={`award-card ${expandedCards.qsaoCaseComp ? 'expanded' : ''}`}>
             <div className="award-icon">
               <Star size={24} />
             </div>
@@ -49,9 +53,11 @@ const Awards = () => {
               {expandedCards.qsaoCaseComp ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </button>
           </div>
+          </ScrollAnimation>
 
           {/* BioHackathon Award*/}
-          <div className="award-card">
+          <ScrollAnimation animation="scaleIn" delay={0.4}>
+            <div className={`award-card ${expandedCards.bioHackathon ? 'expanded' : ''}`}>
             <div className="award-icon">
               <Star size={24} />
             </div>
@@ -74,9 +80,11 @@ const Awards = () => {
               {expandedCards.bioHackathon ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </button>
           </div>
+          </ScrollAnimation>
 
           {/* Dean's List */}
-          <div className="award-card">
+          <ScrollAnimation animation="scaleIn" delay={0.5}>
+            <div className={`award-card ${expandedCards.deansList ? 'expanded' : ''}`}>
             <div className="award-icon">
               <Star size={24} />
             </div>
@@ -99,9 +107,11 @@ const Awards = () => {
               {expandedCards.deansList ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </button>
           </div>
+          </ScrollAnimation>
 
           {/* RCM Level 10 Certificate */}
-          <div className="award-card">
+          <ScrollAnimation animation="scaleIn" delay={0.6}>
+            <div className={`award-card ${expandedCards.rcmLevel10 ? 'expanded' : ''}`}>
             <div className="award-icon certification">
               <GraduationCap size={24} />
             </div>
@@ -124,9 +134,11 @@ const Awards = () => {
               {expandedCards.rcmLevel10 ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </button>
           </div>
+          </ScrollAnimation>
 
           {/* RCM Teaching Elementary Piano Course */}
-          <div className="award-card">
+          <ScrollAnimation animation="scaleIn" delay={0.7}>
+            <div className={`award-card ${expandedCards.rcmTeaching ? 'expanded' : ''}`}>
             <div className="award-icon certification">
               <GraduationCap size={24} />
             </div>
@@ -149,9 +161,11 @@ const Awards = () => {
               {expandedCards.rcmTeaching ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </button>
           </div>
+          </ScrollAnimation>
 
           {/* Web Development Certifications */}
-          <div className="award-card">
+          <ScrollAnimation animation="scaleIn" delay={0.8}>
+            <div className={`award-card ${expandedCards.webDevCerts ? 'expanded' : ''}`}>
             <div className="award-icon certification">
               <GraduationCap size={24} />
             </div>
@@ -184,6 +198,7 @@ const Awards = () => {
               {expandedCards.webDevCerts ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
             </button>
           </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
-# Personal Portfolio Website
+# Mark's Portfolio Website
 
-Built with React and vanilla CSS.
+Built with React, JavaScript and CSS.
+
+Libraries used: Framer Motion, Lucide-react

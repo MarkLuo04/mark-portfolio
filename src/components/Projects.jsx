@@ -1,5 +1,6 @@
 import React from 'react';
 import { FolderOpen, ExternalLink, Github } from 'lucide-react';
+import ScrollAnimation from './ScrollAnimation';
 import '../styles/Projects.css';
 import typevibeImage from '../images/typevibe.png';
 import calculatorImage from '../images/js-calculator.png';
@@ -9,11 +10,14 @@ const Projects = () => {
   return (
     <section className="section" id="projects">
       <div className="section-container">
-        <h2 className="section-header">Projects</h2>
+        <ScrollAnimation animation="fadeInUp" delay={0.2}>
+          <h2 className="section-header">Projects</h2>
+        </ScrollAnimation>
         <div className="projects-grid">
-          <div className="project-card">
-            <div className="project-image">
-              <img src={typevibeImage} alt="Mood Playlist Generator" />
+          <ScrollAnimation animation="fadeInUp" delay={0.4}>
+            <div className="project-card">
+              <div className="project-image">
+                <img src={typevibeImage} alt="Mood Playlist Generator" />
             </div>
             <div className="project-content">
               <div className="project-header">
@@ -49,10 +53,12 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          </ScrollAnimation>
 
-          <div className="project-card">
-            <div className="project-image">
-              <img src={calculatorImage} alt="Calculator App" />
+          <ScrollAnimation animation="fadeInUp" delay={0.6}>
+            <div className="project-card">
+              <div className="project-image">
+                <img src={calculatorImage} alt="Calculator App" />
             </div>
             <div className="project-content">
               <div className="project-header">
@@ -87,10 +93,12 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          </ScrollAnimation>
 
-          <div className="project-card">
-            <div className="project-image">
-              <img src={modellingImage} alt="Battleship Cheats" />
+          <ScrollAnimation animation="fadeInUp" delay={0.8}>
+            <div className="project-card">
+              <div className="project-image">
+                <img src={modellingImage} alt="Battleship Cheats" />
             </div>
             <div className="project-content">
               <div className="project-header">
@@ -126,15 +134,18 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          </ScrollAnimation>
         </div>
-        <div className="projects-cta">
+        <ScrollAnimation animation="fadeInUp" delay={1.0}>
+          <div className="projects-cta">
           <a href="https://github.com/MarkLuo04" target="_blank" rel="noopener noreferrer">
             <button className="btn btn-secondary btn-large">
               <Github size={18} />
               <span>View more projects on my GitHub</span>
             </button>
           </a>
-        </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

@@ -54,7 +54,6 @@ const ScrollAnimation = ({
 
   return (
     <motion.div
-      key={`${animation}-${isDarkMode ? 'dark' : 'light'}`}
       ref={ref}
       initial={selectedAnimation.initial}
       animate={isInView ? selectedAnimation.animate : selectedAnimation.initial}

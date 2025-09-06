@@ -1,6 +1,9 @@
 /* Basic scroll behavior */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 /* Global font and typography */
@@ -11,6 +14,12 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Basic element resets */
@@ -29,4 +38,30 @@ button {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Ensure root element and main containers are properly sized */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal scrolling on mobile */
+* {
+  box-sizing: border-box;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }

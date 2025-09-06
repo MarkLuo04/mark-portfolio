@@ -90,7 +90,6 @@ const Hero = () => {
 
   return (
     <section 
-      key={isDarkMode ? 'dark' : 'light'}
       className="hero section" 
       id="home"
     >

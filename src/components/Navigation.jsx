@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Home, User, Briefcase, Code, Award, Mail, Sun, Moon } from 'lucide-react';
+import { Home, Briefcase, Code, Award, Mail, Sun, Moon } from 'lucide-react';
 import '../styles/Navigation.css';
 
 const Navigation = () => {
   const { isDarkMode, toggleTheme } = useTheme();
   const [showTooltip, setShowTooltip] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     // Show tooltip after 3 seconds
@@ -22,6 +23,35 @@ const Navigation = () => {
       clearTimeout(timer);
       clearTimeout(hideTimer);
     };
+  }, []);
+
+  // Active section detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'experience', 'projects', 'awards', 'footer'];
+      const scrollPosition = window.scrollY + 200; // Increased offset for better detection
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Special handling for footer - if we're near the bottom of the page, show footer as active
+      if (scrollPosition + windowHeight >= documentHeight - 100) {
+        setActiveSection('footer');
+        return;
+      }
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleThemeToggle = () => {
@@ -43,24 +73,21 @@ const Navigation = () => {
     <nav className="nav-container">
       <div className="nav-content">
         <div className="nav-links">
-          <a href="#home" className="nav-link active">
+          <a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>
             <div className="nav-icon-container">
               <Home className="nav-icon" />
             </div>
           </a>
-          <a href="#about" className="nav-link">
-            <User className="nav-icon" />
-          </a>
-          <a href="#experience" className="nav-link">
+          <a href="#experience" className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}>
             <Briefcase className="nav-icon" />
           </a>
-          <a href="#projects" className="nav-link">
+          <a href="#projects" className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}>
             <Code className="nav-icon" />
           </a>
-          <a href="#awards" className="nav-link">
+          <a href="#awards" className={`nav-link ${activeSection === 'awards' ? 'active' : ''}`}>
             <Award className="nav-icon" />
           </a>
-          <a href="#footer" className="nav-link">
+          <a href="#footer" className={`nav-link ${activeSection === 'footer' ? 'active' : ''}`}>
             <Mail className="nav-icon" />
           </a>
           <div className="nav-separator"></div>

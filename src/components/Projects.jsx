@@ -30,8 +30,8 @@ const Projects = () => {
               <div className="project-tech">
                 <span>React</span>
                 <span>Node.js</span>
+                <span>Next.js</span>
                 <span>Typescript</span>
-                <span>CSS</span>
               </div>
               <div className="project-actions">
                 <a href="https://github.com/Jiayel9/TypeVibe" target="_blank" rel="noopener noreferrer">

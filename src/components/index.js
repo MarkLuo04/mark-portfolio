@@ -7,3 +7,6 @@ export { default as Skills } from './Skills';
 export { default as Awards } from './Awards';
 export { default as Footer } from './Footer';
 export { default as ScrollAnimation } from './ScrollAnimation';
+export { default as ProjectCard } from './ProjectCard';
+export { default as AwardCard } from './AwardCard';
+export { default as ExperienceCard } from './ExperienceCard';

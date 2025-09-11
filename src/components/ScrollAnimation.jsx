@@ -66,7 +66,7 @@ const ScrollAnimation = ({
       {...props}
     >
       {children}
-    </motion.div>
+    </motion.div> 
   );
 };
 

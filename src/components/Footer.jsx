@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Github, Twitter, Instagram } from 'lucide-react';
+import { Mail, Linkedin, Github, Twitter, Instagram, FileText } from 'lucide-react';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -22,14 +22,16 @@ const Footer = () => {
             <a href="https://www.instagram.com/_markluo/" className="social-link">
               <Instagram size={20} />
             </a>
+            <a href="/resume.pdf" download="Mark_Luo_Resume.pdf" className="social-link">
+              <FileText size={20} />
+            </a>
           </div>
         </div>
 
         {/* Footer Credits */}
         <div className="footer-credits">
           <div className="credits-content">
-            <p>© 2025 Mark Luo. Built with React & Vite</p>
-            <p>View how I designed and developed this portfolio. <a href="https://github.com/MarkLuo04/mark-portfolio" className="github-link">Source code on GitHub</a></p>
+            <p>© 2025 Mark Luo. <a href="https://github.com/MarkLuo04/mark-portfolio" className="github-link">Source code on GitHub</a></p>
           </div>
         </div>
       </div>

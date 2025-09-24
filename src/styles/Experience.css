@@ -23,41 +23,14 @@
   margin-right: auto;
 }
 
-/* Timeline Layout */
-.experience-timeline {
-  position: relative;
-  padding-left: 60px;
+/* Experience Grid Layout */
+.experience-grid {
+  display: grid;
+  gap: 40px;
   margin-top: 60px;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 30px;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--accent-primary);
-  opacity: 0.4;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 60px;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -34px;
-  top: 20px;
-  width: 8px;
-  height: 8px;
-  background: var(--accent-primary);
-  border-radius: 50%;
-  border: none;
-  box-shadow: none;
-  opacity: 1;
-  transform: none;
-  transition: all 0.3s ease;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Experience Card */
@@ -74,9 +47,9 @@
   transform: translateY(-2px);
 }
 
-/* Minimalistic View */
+/* Card Content */
 .experience-minimal {
-  padding: 32px;
+  padding: 40px;
   position: relative;
 }
 
@@ -560,13 +533,17 @@
     gap: 20px;
   }
   
+  .experience-grid {
+    gap: 32px;
+  }
+  
   .experience-minimal {
-    padding: 24px;
+    padding: 32px;
     position: relative;
   }
   
   .job-title {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
   }
   
   .company-name {

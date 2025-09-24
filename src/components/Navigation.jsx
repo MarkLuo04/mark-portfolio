@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { useSectionDetection } from '../hooks/useSectionDetection';
-import { Home, Briefcase, Code, Award, Mail, Sun, Moon } from 'lucide-react';
+import { Home, Briefcase, Code, Award, Mail, Sun, Moon, FileText } from 'lucide-react';
 import '../styles/Navigation.css';
 
 const Navigation = () => {
@@ -123,6 +123,9 @@ const Navigation = () => {
           </a>
           <a href="#footer" className={`nav-link ${activeSection === 'footer' ? 'active' : ''}`} onClick={handleNavClick}>
             <Mail className="nav-icon" />
+          </a>
+          <a href="/resume.pdf" download="Mark_Luo_Resume.pdf" className="nav-link nav-resume">
+            <FileText className="nav-icon" />
           </a>
           <div className="nav-separator"></div>
           <div className="theme-toggle-container">

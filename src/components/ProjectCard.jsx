@@ -32,21 +32,23 @@ const ProjectCard = ({
         </div>
         <div className="project-actions">
           <a href={codeLink} target="_blank" rel="noopener noreferrer">
-            <button className="btn btn-secondary">
+            <button className={`btn btn-secondary ${demoLink === '#' ? 'btn-full-width' : ''}`}>
               <span className="btn-icon">
                 <FolderOpen size={16} />
               </span>
               Code
             </button>
           </a>
-          <a href={demoLink} target="_blank" rel="noopener noreferrer">
-            <button className="btn btn-primary">
-              <span className="btn-icon">
-                <ExternalLink size={16} />
-              </span>
-              Live Demo
-            </button>
-          </a>
+          {demoLink !== '#' && (
+            <a href={demoLink} target="_blank" rel="noopener noreferrer">
+              <button className="btn btn-primary">
+                <span className="btn-icon">
+                  <ExternalLink size={16} />
+                </span>
+                Live Demo
+              </button>
+            </a>
+          )}
         </div>
       </div>
     </div>

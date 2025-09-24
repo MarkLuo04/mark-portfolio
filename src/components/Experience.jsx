@@ -114,14 +114,9 @@ const Experience = () => {
           <h2 className="section-header">My Experiences</h2>
         </ScrollAnimation>
         
-        <div className="experience-timeline">
-          {/* Timeline Line */}
-          <ScrollAnimation animation="slideInUp" delay={0.2} duration={0.6}>
-            <div className="timeline-line"></div>
-          </ScrollAnimation>
-          
+        <div className="experience-grid">
           {experiencesData.map((experience) => (
-            <ScrollAnimation key={experience.id} animation={experience.animation} delay={experience.delay}>
+            <ScrollAnimation key={experience.id} animation="fadeInUp" delay={experience.delay}>
               <ExperienceCard
                 id={experience.id}
                 title={experience.title}

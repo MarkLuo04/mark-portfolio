@@ -117,6 +117,8 @@
   font-weight: 500;
 }
 
+
+
 /* Light mode tagline styling */
 [data-theme="light"] .hero-tagline {
   color: #666666;

@@ -126,6 +126,7 @@ const Hero = () => {
             delay={1500}
           />
         </div>
+        
         <motion.div 
           className="scroll-indicator"
           initial={{ opacity: 0 }}

@@ -120,6 +120,11 @@
   white-space: nowrap;
 }
 
+.project-actions .btn-full-width {
+  flex: none;
+  width: 100%;
+}
+
 .btn-icon {
   font-size: 1rem;
   display: flex;
